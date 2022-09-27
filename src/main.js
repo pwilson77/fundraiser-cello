@@ -7,7 +7,7 @@ import fundraiserAbi from "../contract/fundraiser.abi.json";
 
 const ERC20_DECIMALS = 18;
 const FundraiserFactoryContractAddress =
-  "0x3D9314aBa4efaA743564fEE70E83a0a797dD0E40";
+  "0x55b73E1B684738abB6457304C3e95038921a6a83";
 const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
 
 let kit;

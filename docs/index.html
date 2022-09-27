@@ -40,33 +40,32 @@
         }
       }
     </style>
-    <title>Street Food Kigali</title>
+    <title>Fundraisers</title>
   </head>
 
   <body>
     <div class="container mt-2" style="max-width: 72em">
       <nav class="navbar bg-white navbar-light">
         <div class="container-fluid">
-          <span class="navbar-brand m-0 h4 fw-bold">Street Food Kigali</span>
-          <span class="nav-link border rounded-pill bg-light">
+          <span class="navbar-brand m-0 h4 fw-bold">Fundraiser</span>
+          <!-- <span class="nav-link border rounded-pill bg-light">
             <span id="balance">0</span>
             cUSD
-          </span>
+          </span> -->
+          <a
+            class="btn btn-dark rounded-pill"
+            data-bs-toggle="modal"
+            data-bs-target="#addModal"
+          >
+            Add Fundraiser
+          </a>
         </div>
       </nav>
       <div class="alert alert-warning sticky-top mt-2" role="alert">
         <span id="notification">⌛ Loading...</span>
       </div>
-      <div class="mb-4" style="margin-top: 4em">
-        <a
-          class="btn btn-dark rounded-pill"
-          data-bs-toggle="modal"
-          data-bs-target="#addModal"
-        >
-          Add product
-        </a>
-      </div>
-      <main id="marketplace" class="row"></main>
+      <div class="mb-4" style="margin-top: 4em">Fundraiser list</div>
+      <main id="fundraiser-area" class="row"></main>
       <!--Modal-->
       <div
         class="modal fade"
@@ -78,7 +77,9 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="newProductModalLabel">New Product</h5>
+              <h5 class="modal-title" id="newProductModalLabel">
+                New Fundraiser
+              </h5>
               <button
                 type="button"
                 class="btn-close"
@@ -93,41 +94,33 @@
                   <div class="col">
                     <input
                       type="text"
-                      id="newProductName"
+                      id="fundraiserName"
                       class="form-control mb-2"
-                      placeholder="Enter name of product"
+                      placeholder="Enter name of Fundraiser"
                     />
                   </div>
                   <div class="col">
                     <input
                       type="text"
-                      id="newImgUrl"
+                      id="prizeName"
                       class="form-control mb-2"
-                      placeholder="Enter image url"
+                      placeholder="Enter Prize name"
                     />
                   </div>
                   <div class="col">
                     <input
                       type="text"
-                      id="newProductDescription"
+                      id="prizeImageUrl"
                       class="form-control mb-2"
-                      placeholder="Enter product description"
+                      placeholder="Enter prize image URL"
                     />
                   </div>
                   <div class="col">
                     <input
-                      type="text"
-                      id="newLocation"
+                      type="number"
+                      id="amountToBeRaised"
                       class="form-control mb-2"
-                      placeholder="Enter location"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      type="text"
-                      id="newPrice"
-                      class="form-control mb-2"
-                      placeholder="Enter price"
+                      placeholder="Enter target"
                     />
                   </div>
                 </div>
@@ -145,9 +138,66 @@
                 type="button"
                 class="btn btn-dark"
                 data-bs-dismiss="modal"
-                id="newProductBtn"
+                id="newFundraiserBtn"
               >
-                Add product
+                Add Fundraiser
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contribute -->
+      <div
+        class="modal fade"
+        id="viewContributeModal"
+        tabindex="-1"
+        aria-labelledby="fundraiserDetails"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="fundraiserDetails">
+                Contribute to fundraiser
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                    <input
+                      type="number"
+                      id="amountToContribute"
+                      class="form-control mb-2"
+                      placeholder="Enter contribution amount"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-light border"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-dark contributeBtn"
+                data-bs-dismiss="modal"
+                id="contributeToFundraiser"
+              >
+                Contribute
               </button>
             </div>
           </div>

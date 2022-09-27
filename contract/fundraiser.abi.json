@@ -2,11 +2,6 @@
     {
         "inputs": [
             {
-                "internalType": "address payable",
-                "name": "_organizer",
-                "type": "address"
-            },
-            {
                 "internalType": "uint256",
                 "name": "_amountToBeRaised",
                 "type": "uint256"
@@ -27,24 +22,44 @@
                 "type": "string"
             }
         ],
+        "name": "createFundRaiser",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
         "stateMutability": "nonpayable",
-        "type": "constructor"
+        "type": "function"
     },
     {
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "_amount",
+                "name": "",
                 "type": "uint256"
             }
         ],
-        "name": "contribute",
-        "outputs": [],
-        "stateMutability": "payable",
+        "name": "fundraisers",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
         "type": "function"
     },
     {
-        "inputs": [],
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "index",
+                "type": "uint256"
+            }
+        ],
         "name": "getFundraiserDetails",
         "outputs": [
             {
@@ -98,9 +113,28 @@
     },
     {
         "inputs": [],
-        "name": "withdraw",
-        "outputs": [],
-        "stateMutability": "payable",
+        "name": "getNumberOfFundraisers",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
         "type": "function"
     }
 ]
