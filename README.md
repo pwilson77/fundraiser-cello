@@ -1,3 +1,10 @@
+# Description 
+This is demo app that allows individual/organizations to raise funds based using the cello blockchain.
+Users that contribute to a fundraiser are add to raffle, once the fundraiser is complete a user is selected to 
+win a prize
+
+[Live demo](https://pwilson77.github.io/fundraiser-cello/)
+
 # Install
 
 ```
