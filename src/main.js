@@ -7,7 +7,7 @@ import fundraiserAbi from "../contract/fundraiser.abi.json";
 
 const ERC20_DECIMALS = 18;
 const FundraiserFactoryContractAddress =
-  "0x55b73E1B684738abB6457304C3e95038921a6a83";
+  "0x1edfe10859FAE2Ae8e2A7502Ee60D87A7dd54456";
 const cUSDContractAddress = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
 
 let kit;
@@ -55,7 +55,7 @@ function renderFundraisers() {
   document.getElementById("fundraiser-area").innerHTML = "";
   fundraisers.forEach((_fundraiser) => {
     const newDiv = document.createElement("div");
-    newDiv.className = "col-md-4";
+    newDiv.className = "col-md-6";
     newDiv.innerHTML = fundraiserTemplate(_fundraiser);
     document.getElementById("fundraiser-area").appendChild(newDiv);
   });
@@ -70,7 +70,7 @@ function fundraiserTemplate(_fundraiser) {
               _fundraiser.prizeImage
             }" alt="...">
             <div class="position-absolute top-0 start-0 bg-warning mt-4 px-2 py-1 rounded-start">
-              ${_fundraiser.amountRaised} Raised
+              ${_fundraiser.amountRaised} cUSD Raised
             </div>
           </div>
           <div class="col-md-8">
@@ -94,16 +94,25 @@ function fundraiserTemplate(_fundraiser) {
             </p>
             <p class="card-text">
               <i class="bi bi-dice-1-fill"></i>
-              <span> Fundraiser Target: ${_fundraiser.amountToBeRaised}</span>
+              <span> Fundraiser Target: ${
+                _fundraiser.amountToBeRaised
+              } cUSD</span>
             </p>
             <p class="card-text">
               <i class="bi bi-people-fill"></i>
               <span> Organizer address: ${_fundraiser.organizer}</span>
             </p>
-            <p class="card-text">
-              <i class="bi bi-trophy-fill"></i>         
-              <span> Winner address: ${_fundraiser.winnerAddress}</span>
-            </p>
+            ${
+              _fundraiser.winnerAddress
+                ? `
+              <p class="card-text">
+                <i class="bi bi-trophy-fill"></i>         
+                <span> Winner address: ${_fundraiser.winnerAddress}</span>
+              </p>
+            `
+                : ""
+            }
+           
             <div class="d-grid gap-2">
             ${
               kit.defaultAccount === _fundraiser.organizer
